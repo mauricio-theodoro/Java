@@ -59,7 +59,7 @@ public class Endereco {
     public void setCep(int cep) {
         this.cep = cep;
     }
-    public int getCep(int cep){
+    public int getCep(){
         return cep;
     }
 }
