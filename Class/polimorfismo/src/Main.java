@@ -4,7 +4,7 @@ import flix.Video;
 
 public class Main{
     public static void main(String[] args) throws Exception {
-        //plimorfismo
+        //polimorfismo
         // permite que o mesmo nome, represente vários comportamentos diferentes
         // um unico nome pode ter comportamento diferentes
         Filme filme = new Filme("O Demolidor");
