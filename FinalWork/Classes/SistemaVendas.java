@@ -19,8 +19,8 @@ public class SistemaVendas {
         }
     }
 
-    public void finalizarVenda(Cliente cliente, Vendedor vendedor, FormaPagamento formaPagamento) {
-        vendaAtual = new Venda(cliente, vendedor, carrinho.getItens(),formaPagamento);
+    public void finalizarVenda(int id,Cliente cliente, Vendedor vendedor, FormaPagamento formaPagamento) {
+        vendaAtual = new Venda(id,cliente, vendedor, carrinho.getItens(),formaPagamento);
         System.out.println("Venda finalizada. Total: " + vendaAtual.getTotal());
         carrinho.limparCarrinho(); // Limpa o carrinho após finalizar a venda
     }
