@@ -34,18 +34,29 @@ public class ProdutoController {
     }
 
 
-
-
     // GET /produtos/{id} - Buscar produto por ID
     @GetMapping("/{id}")
-    public Produto obterPorId(@PathVariable String id) {
+    public Produto obterPorId(@PathVariable("id") String id) {
         Optional<Produto> produto = produtoRepository.findById(id);
         return  produto.isPresent() ? produto.get() : null;
     }
 
-    // GET /produtos - Listar todos os produtos
+    // Delete /produtos/{id} - Deletando os produto por ID
+    @DeleteMapping("/{id}")
+    public void deletar(@PathVariable("id") String id) {
+        produtoRepository.deleteById(id);
+    }
+
+    @PutMapping("/{id}")
+    public void atualizar(@PathVariable("id") String id, @RequestBody Produto produto) {
+        produto.setId(id);
+        produtoRepository.save(produto);
+    }
+
+    // GET /produtos - Listar os produtos por nome.
     @GetMapping
-    public List<Produto> listarTodos() {
-        return produtoRepository.findAll();
+    public List<Produto> listarTodos(@RequestParam("nome") String nome) {
+
+        return produtoRepository.findByNome(nome);
     }
 }
