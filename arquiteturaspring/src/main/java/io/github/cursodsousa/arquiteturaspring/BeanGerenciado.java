@@ -3,10 +3,12 @@ package io.github.cursodsousa.arquiteturaspring;
 import io.github.cursodsousa.arquiteturaspring.todos.TodoEntity;
 import io.github.cursodsousa.arquiteturaspring.todos.TodoValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 // SCRIPT COM 3 FORMAS DE FAZER INJEÇÃO DE DEPENDENCIAS
 //singleton
+@Lazy
 @Component
 @Scope("singleton")
 //@Scope("request")
@@ -18,6 +20,8 @@ public class BeanGerenciado {
 
     @Autowired
     private TodoValidator validator;
+
+
 
     //usar mais o construtor!\/
     @Autowired
