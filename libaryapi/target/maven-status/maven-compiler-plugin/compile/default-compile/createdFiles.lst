@@ -1,1 +1,3 @@
 com\example\libaryapi\Application.class
+com\example\libaryapi\model\Autor.class
+com\example\libaryapi\config\DatabaseConfiguration.class
