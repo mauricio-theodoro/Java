@@ -31,7 +31,11 @@ public class DatabaseConfiguration {
         return ds;
     }
 
-
+    /**
+     * configuracao Hikary
+     * https://github.com/brettwooldridge/HikariCP
+     * @return
+     */
     @Bean
     public DataSource hikariDataSource(){
 
